@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Updated to Inter for consistency -->
+    <title>Simple Website - Home</title>
+    <link rel="stylesheet" href="style.css"> <!-- Note: Your CSS file is named 'style.css' in the HTML, so ensure it matches -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="card"> <!-- Added card wrapper for lively box styling -->
+            <h1>Welcome to My Simple Website</h1>
+            <p>Type a city below to get the current weather (via OpenWeatherMap API):</p>
+            
+            <div class="input-group"> <!-- Grouped input and button for better alignment -->
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <button id="getWeatherBtn">Get Weather</button>
+            </div>
+            
+            <div id="weather" class="centered-box"> <!-- Added 'centered-box' class for centering -->
+                <p>Weather will appear here.</p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+/* Import a modern font and icons */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'); /* For icons */
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%); /* Soft green gradient for fresh, weather-like feel */
+    color: #212121;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.05"/><circle cx="20" cy="80" r="1.5" fill="%23c8e6c9" opacity="0.1"/><circle cx="80" cy="20" r="1" fill="%23a5d6a7" opacity="0.08"/></svg>') repeat; /* Subtle white/green nature-like dots */
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    background-color: #333333; /* Dark charcoal gray for a sleek header */
+    color: #ffffff; /* White text for contrast */
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #4caf50; /* Green accent border */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #e8f5e9, #4caf50, #2e7d32); /* Green wave accent */
+    border-radius: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+nav a {
+    color: #ffffff; /* White text on dark header */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    position: relative;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #4caf50; /* Green circle on hover */
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+nav a:hover::before {
+    width: 120%;
+    height: 120%;
+}
+
+nav a:hover {
+    color: #333333; /* Dark text on green hover */
+    transform: scale(1.05);
+}
+
+main {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(76, 175, 80, 0.2), 0 0 0 1px #e8f5e9; /* Green-tinted shadow */
+    animation: slideIn 0.6s ease-out;
+    position: relative;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: linear-gradient(45deg, #e8f5e9, #4caf50, #2e7d32);
+    border-radius: 18px;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.card {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #e8f5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    transform: scale(1.02);
+    outline: none;
+}
+
+.input-group button {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); /* Green gradient */
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.input-group button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.centered-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #212121;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #e8f5e9, #4caf50); /* Green underline */
+    border-radius: 2px;
+    margin-top: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #757575;
+}
+
+/* Weather Section with Icon */
+#weather {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); /* Light green gradient */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#weather::before {
+    content: '\f0c2'; /* Font Awesome cloud icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 2rem;
+    color: #4caf50; /* Green cloud icon */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#weather p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Form Styles with Shapes */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%); /* Light gray-green */
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #c8e6c9; /* Light green border */
+    position: relative;
+}
+
+form::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background: #4caf50; /* Green circle accent */
+    border-radius: 50%;
+}
+
+input, textarea {
+    padding: 0.75rem;
+    border: 2px solid #e8f5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    transform: scale(1.02);
+    outline: none;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); /* Green gradient */
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    align-self: flex-start;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+#form-response {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #388e3c;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: #e8f5e8;
+    border: 1px solid #c8e6c9;
+    position: relative;
+}
+
+#form-response::before {
+    content: '\f058'; /* Check icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #388e3c;
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    main {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    #weather {
+        padding: 1rem;
+        min-height: 100px;
+    }
+}
